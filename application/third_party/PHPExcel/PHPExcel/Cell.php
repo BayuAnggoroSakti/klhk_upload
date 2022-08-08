@@ -583,7 +583,7 @@ class PHPExcel_Cell
      */
     public static function coordinateFromString($pCoordinateString = 'A1')
     {
-        if (preg_match("/^([$]?[A-Z]{1,3})([$]?\d{1,7})$/", $pCoordinateString, $matches)) {
+        if (preg_match("/^([$]?[A-Z][1]3})([$]?\d[1]7})$/", $pCoordinateString, $matches)) {
             return array($matches[1],$matches[2]);
         } elseif ((strpos($pCoordinateString, ':') !== false) || (strpos($pCoordinateString, ',') !== false)) {
             throw new PHPExcel_Exception('Cell coordinate string can not be a range of cells');
@@ -810,14 +810,14 @@ class PHPExcel_Cell
         //    We also use the language construct isset() rather than the more costly strlen() function to match the length of $pString
         //        for improved performance
         if (isset($pString[0])) {
-            if (!isset($pString{1})) {
+            if (!isset($pString[1])) {
                 $_indexCache[$pString] = $_columnLookup[$pString];
                 return $_indexCache[$pString];
-            } elseif (!isset($pString{2})) {
-                $_indexCache[$pString] = $_columnLookup[$pString[0]] * 26 + $_columnLookup[$pString{1}];
+            } elseif (!isset($pString[2])) {
+                $_indexCache[$pString] = $_columnLookup[$pString[0]] * 26 + $_columnLookup[$pString[1]];
                 return $_indexCache[$pString];
-            } elseif (!isset($pString{3})) {
-                $_indexCache[$pString] = $_columnLookup[$pString[0]] * 676 + $_columnLookup[$pString{1}] * 26 + $_columnLookup[$pString{2}];
+            } elseif (!isset($pString[3])) {
+                $_indexCache[$pString] = $_columnLookup[$pString[0]] * 676 + $_columnLookup[$pString[1]] * 26 + $_columnLookup[$pString[2]];
                 return $_indexCache[$pString];
             }
         }
