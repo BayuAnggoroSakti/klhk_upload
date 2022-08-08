@@ -541,7 +541,7 @@ class PHPExcel_Reader_Excel2007 extends PHPExcel_Reader_Abstract implements PHPE
 
                             // add style to cellXf collection
                             $objStyle = new PHPExcel_Style;
-                            //self::readStyle($objStyle, $style);
+                            self::readStyle($objStyle, $style);
                             $excel->addCellXf($objStyle);
                         }
 
@@ -569,7 +569,7 @@ class PHPExcel_Reader_Excel2007 extends PHPExcel_Reader_Abstract implements PHPE
 
                             // add style to cellStyleXf collection
                             $objStyle = new PHPExcel_Style;
-                           // self::readStyle($objStyle, $cellStyle);
+                            self::readStyle($objStyle, $cellStyle);
                             $excel->addCellStyleXf($objStyle);
                         }
                     }
@@ -580,7 +580,7 @@ class PHPExcel_Reader_Excel2007 extends PHPExcel_Reader_Abstract implements PHPE
                         if ($xmlStyles->dxfs) {
                             foreach ($xmlStyles->dxfs->dxf as $dxf) {
                                 $style = new PHPExcel_Style(false, true);
-                                //self::readStyle($style, $dxf);
+                                self::readStyle($style, $dxf);
                                 $dxfs[] = $style;
                             }
                         }
@@ -591,7 +591,7 @@ class PHPExcel_Reader_Excel2007 extends PHPExcel_Reader_Abstract implements PHPE
                                     if (isset($cellStyles[intval($cellStyle['xfId'])])) {
                                         // Set default style
                                         $style = new PHPExcel_Style;
-                                        //self::readStyle($style, $cellStyles[intval($cellStyle['xfId'])]);
+                                        self::readStyle($style, $cellStyles[intval($cellStyle['xfId'])]);
 
                                         // normal style, currently not using it for anything
                                     }
