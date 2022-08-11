@@ -80,7 +80,7 @@ class Upload extends CI_Controller {
 
 									$data_row = array(
 										'uid' => $uid,
-										'datetime'=>strtotime($row['H']) * 1000,
+										'datetime'=>strtotime($row['H']),
 										'pH'=>str_replace(',','.',$row['C']),
 										'cod'=>str_replace(',','.',$row['E']),
 										'tss'=>str_replace(',','.',$row['D']),
@@ -92,7 +92,7 @@ class Upload extends CI_Controller {
 									$response = $this->send_post($endpoint,$token).'<br>';
 									array_push($data, array(
 										'uid' => $uid,	
-										'datetime'=>strtotime($row['H']) * 1000,
+										'datetime'=>strtotime($row['H']),
 										'pH'=>str_replace(',','.',$row['C']), 
 										'cod'=>str_replace(',','.',$row['E']),
 										'tss'=>str_replace(',','.',$row['D']),
