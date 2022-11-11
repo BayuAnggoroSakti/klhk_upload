@@ -54,7 +54,7 @@
 	<!-- Main navbar -->
 	<div class="navbar navbar-inverse bg-teal">			
 		<div class="navbar-header">
-			<h1>PT STC</h1>
+			<h1>PT INTEGRA ENVIRO</h1>
 
 			<ul class="nav navbar-nav pull-right visible-xs-block">
 				<li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-display4"></i> </a></li>
